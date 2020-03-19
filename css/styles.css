@@ -1,5 +1,6 @@
 :root {
-    --pink: #FF1EA9;
+    --theme: #FF1EA9;
+    --themergba: rgba(255, 30, 169, 0.452);
 }
 
 * {
@@ -12,6 +13,7 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     background-image: linear-gradient(to bottom, #4b4b4c, #5b5b5b, #6b6b6b, #7b7b7b, #8c8c8c);
+    scroll-behavior: smooth;
 }
 
 .switch {
@@ -75,6 +77,18 @@ a {
     padding: 0.5em 1em;
 }
 
+.pink {
+    color: var(--theme);
+}
+
+.pink-bdr {
+    border: 2px solid var(--theme);
+}
+
+.pink-bgc {
+    background-color: var(--theme);
+}
+
 #about,
 #gallery-nav,
 #testimonials,
@@ -86,13 +100,12 @@ a {
 #purchase .button,
 #footer-links .button {
     color: white;
-    border: 2px solid var(--pink);
+    border: 2px solid var(--theme);
     display: inline-block;
 }
 
-.pink-button {
+.theme-button {
     color: white;
-    background-color: var(--pink);
     font-weight: bold;
 }
 
@@ -100,15 +113,13 @@ a {
     height: 3px;
     width: 3em;
     margin: auto;
-    background-color: var(--pink);
 }
 
 .italic {
     font-style: italic;
 }
 
-.pink {
-    color: var(--pink);
+.theme {
     text-decoration: underline;
 }
 
@@ -122,8 +133,6 @@ a {
 .fa-tint {
     margin: 0.2em;
     padding: 0.3em 0.5em;
-    border: 2px solid var(--pink);
-    color: var(--pink);
 }
 
 .tint-switch {
@@ -146,7 +155,6 @@ header {
 #main-nav a {
     margin: 0 1em;
     color: white;
-    /* font-weight: bold; */
 }
 
 
@@ -177,7 +185,6 @@ header {
 .fa-wordpress,
 .fa-paper-plane {
     font-size: 2em;
-    color: var(--pink);
     margin-right: 0.4em;
 }
 
@@ -187,7 +194,6 @@ header {
 
 .fa-plus {
     font-size: 1.2em;
-    color: var(--pink);
     margin-right: 0.7em;
 }
 
@@ -250,12 +256,32 @@ header {
     align-items: center;
     justify-content: center;
     transition: opacity 0.8s;
-    background-color: rgba(255, 0, 212, 0.459);
+    background-color: var(--themergba);
 }
 
 #gallery-img i {
     font-size: 4.5em;
-    color: var(--pink);
+}
+
+.lightbox {
+    z-index: 999;
+}
+
+.lightbox-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.11);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.lightbox-open img {
+    object-fit: cover;
 }
 
 #gallery-nav {
@@ -269,7 +295,12 @@ header {
 }
 
 #gallery-nav nav a:hover {
-    color: var(--pink);
+    color: var(--theme);
+}
+
+#gallery-nav .pink {
+    font-weight: bold;
+    cursor: pointer;
 }
 
 
@@ -302,8 +333,6 @@ header {
 }
 
 #testimonials .button {
-    border: 2px solid var(--pink);
-    color: var(--pink);
     font-weight: bold;
 }
 
@@ -316,6 +345,7 @@ header {
 
 #purchase {
     text-align: center;
+    background: url('../img/purchase_banner.jpg') center/cover no-repeat;
 }
 
 #purchase .button {
@@ -339,7 +369,7 @@ header {
 
 #contact .important::after {
     content: "*";
-    color: var(--pink);
+    color: var(--theme);
 }
 
 #contact form input {
@@ -360,6 +390,8 @@ header {
     margin-top: 1.5em;
     padding: 1em 1.5em;
     cursor: pointer;
+    color: white;
+    font-weight: bold;
 }
 
 
@@ -394,6 +426,10 @@ footer p,
     max-width: 30%;
 }
 
+#footer-links .pink {
+    text-decoration: underline;
+}
+
 #footer-links .separator {
     margin: 0;
 }
@@ -410,4 +446,24 @@ footer p,
 
 #footer-nav a {
     margin: 0 10px;
+}
+
+
+/* SCROLL UP BUTTON */
+
+#page-up {
+    position: fixed;
+    bottom: 2em;
+    right: 3.5em;
+    background: rgba(255, 255, 255, 0.76);
+    border-radius: 50%;
+}
+
+#page-up a {
+    text-decoration: none;
+    color: black;
+}
+
+#page-up i {
+    padding: 5px 7px;
 }
