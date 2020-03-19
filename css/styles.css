@@ -14,9 +14,19 @@ body {
     background-color: rgb(196, 196, 196);
 }
 
+.switch {
+    background-color: red;
+}
+
 #wrapper {
     max-width: 1280px;
     margin: auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Baloo Thambi 2', cursive;
 }
 
 h1,
@@ -102,6 +112,25 @@ a {
     text-decoration: underline;
 }
 
+#theme-switch {
+    position: fixed;
+    top: 30%;
+    left: 2em;
+    cursor: pointer;
+}
+
+.fa-tint {
+    margin: 0.2em;
+    padding: 0.3em 0.5em;
+    border: 2px solid var(--pink);
+    color: var(--pink);
+}
+
+.tint-switch {
+    border: 2px solid black;
+    color: black;
+}
+
 
 /* NAVIGATION */
 
@@ -137,6 +166,10 @@ header {
 #about article {
     max-width: 30%;
     flex: 1;
+}
+
+#about h3 {
+    cursor: pointer;
 }
 
 .fa-cog,
@@ -325,6 +358,7 @@ header {
     width: max-content;
     margin-top: 1.5em;
     padding: 1em 1.5em;
+    cursor: pointer;
 }
 
 
